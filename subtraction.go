@@ -20,7 +20,7 @@ func subtraction(val1, val2 string) (string, error) {
 		if err != nil {
 			return "", err
 		}
-		if tm1 < 0 {
+		if v < 0 {
 			return "", errors.New("param error.")
 		}
 		tm1 = v
@@ -36,7 +36,7 @@ func subtraction(val1, val2 string) (string, error) {
 		if err != nil {
 			return "", err
 		}
-		if tm2 < 0 {
+		if v < 0 {
 			return "", errors.New("param error.")
 		}
 		tm2 = v
