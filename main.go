@@ -8,8 +8,12 @@ import (
 func main() {
 	l := len(os.Args)
 	if l == 2 {
-		result, _ := convert(os.Args[1])
-		fmt.Println("=> " + result)
+		result, err := convert(os.Args[1])
+		if err != nil {
+			fmt.Printf("%s\n", err)
+		} else {
+			fmt.Println("=> " + result)
+		}
 	} else if l == 3 {
 		subtraction(os.Args[1], os.Args[2])
 	} else {
