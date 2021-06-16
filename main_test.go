@@ -1,6 +1,8 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
 ////////////////////
 // xxxx -> x:xx:xx
@@ -124,6 +126,43 @@ func TestConvertB07(t *testing.T) {
 
 func TestConvertB08(t *testing.T) {
 	result, err := convert("-1:23:45")
+	if err == nil || result != "" {
+		t.Fatalf("failed")
+	}
+}
+
+func TestSubtraction01(t *testing.T) {
+	result, err := subtraction("9296", "5025")
+	if err != nil {
+		t.Fatalf("failed %#v", err)
+	}
+	if result != "1:11:11 (4271)" {
+		t.Fatalf("failed %s", result)
+	}
+}
+
+func TestSubtraction02(t *testing.T) {
+	result, err := subtraction("2:34:56", "1:23:45")
+	if err != nil {
+		t.Fatalf("failed %#v", err)
+	}
+	if result != "1:11:11 (4271)" {
+		t.Fatalf("failed %s", result)
+	}
+}
+
+func TestSubtraction03(t *testing.T) {
+	result, err := subtraction("9296", "1:23:45")
+	if err != nil {
+		t.Fatalf("failed %#v", err)
+	}
+	if result != "1:11:11 (4271)" {
+		t.Fatalf("failed %s", result)
+	}
+}
+
+func TestSubtraction04(t *testing.T) {
+	result, err := subtraction("9296", "")
 	if err == nil || result != "" {
 		t.Fatalf("failed")
 	}
