@@ -42,6 +42,11 @@ func subtraction(val1, val2 string) (string, error) {
 		tm2 = v
 	}
 
-	s := tm1 - tm2
+	var s int
+	if tm1 > tm2 {
+		s = tm1 - tm2
+	} else {
+		s = tm2 - tm1
+	}
 	return fmt.Sprintf("%s (%d)", convertToString(s), s), nil
 }

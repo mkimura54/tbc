@@ -167,3 +167,13 @@ func TestSubtraction04(t *testing.T) {
 		t.Fatalf("failed")
 	}
 }
+
+func TestSubtraction05(t *testing.T) {
+	result, err := subtraction("5025", "9296")
+	if err != nil {
+		t.Fatalf("failed %#v", err)
+	}
+	if result != "1:11:11 (4271)" {
+		t.Fatalf("failed %s", result)
+	}
+}
