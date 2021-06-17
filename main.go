@@ -12,14 +12,14 @@ func main() {
 		if err != nil {
 			fmt.Printf("%s\n", err)
 		} else {
-			fmt.Println("=> " + result)
+			fmt.Println(result)
 		}
 	} else if l == 3 {
 		result, err := subtraction(os.Args[1], os.Args[2])
 		if err != nil {
 			fmt.Printf("%s\n", err)
 		} else {
-			fmt.Println("=> " + result)
+			fmt.Println(result)
 		}
 	} else {
 		fmt.Println("param count error.")
