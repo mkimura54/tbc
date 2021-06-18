@@ -20,7 +20,7 @@ func main() {
 			sc := bufio.NewScanner(os.Stdin)
 			for sc.Scan() {
 				input := sc.Text()
-				if input == "quit" || input == "exit" || input == "q" {
+				if input == "quit" || input == "exit" || input == "q" || input == "" {
 					return
 				} else {
 					param := strings.Split(input, " ")
