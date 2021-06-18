@@ -7,9 +7,15 @@ import (
 	"bufio"
 )
 
+const (
+	PROGRAM_NAME = "tbc"
+	VERSION string = "v0.2"
+)
+
 func main() {
 	l := len(os.Args)
 	if l == 1 {
+		fmt.Println(PROGRAM_NAME + " " + VERSION)
 		for {
 			sc := bufio.NewScanner(os.Stdin)
 			for sc.Scan() {
