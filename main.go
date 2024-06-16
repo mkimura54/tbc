@@ -9,7 +9,7 @@ import (
 
 const (
 	PROGRAM_NAME = "tbc"
-	VERSION string = "v0.2"
+	VERSION string = "v0.3"
 )
 
 func main() {
