@@ -1,15 +1,15 @@
 package main
 
 import (
-	"os"
-	"fmt"
-	"strings"
 	"bufio"
+	"fmt"
+	"os"
+	"strings"
 )
 
 const (
 	PROGRAM_NAME = "tbc"
-	VERSION string = "v0.3"
+	VERSION      = "v0.4"
 )
 
 func main() {
