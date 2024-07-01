@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"strings"
-	"strconv"
 	"errors"
+	"fmt"
+	"strconv"
+	"strings"
 )
 
 func convert(val string) (string, error) {
@@ -14,7 +14,8 @@ func convert(val string) (string, error) {
 			return "", err
 		}
 
-		return fmt.Sprintf("%d", v), nil
+		f := float64(v) / 3600
+		return fmt.Sprintf("%d (%.5f)", v, f), nil
 	} else {
 		i, err := strconv.Atoi(val)
 		if err != nil {
@@ -24,6 +25,7 @@ func convert(val string) (string, error) {
 			return "", errors.New("param error.")
 		}
 
-		return convertToString(i), nil
+		f := float64(i) / 3600
+		return fmt.Sprintf("%s (%.5f)", convertToString(i), f), nil
 	}
 }

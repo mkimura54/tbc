@@ -1,16 +1,16 @@
 package main
 
 import (
-	"fmt"
-	"strings"
 	"errors"
+	"fmt"
 	"strconv"
+	"strings"
 )
 
 func convertToString(seconds int) string {
 	h := seconds / 3600
-	m := (seconds - 3600 * h) / 60
-	s := seconds - 3600 * h - 60 * m
+	m := (seconds - 3600*h) / 60
+	s := seconds - 3600*h - 60*m
 	return fmt.Sprintf("%01d:%02d:%02d", h, m, s)
 }
 
@@ -39,5 +39,5 @@ func convertToSeconds(val string) (int, error) {
 		return 0, errors.New("param error.")
 	}
 
-	return 3600 * h + 60 * m + s, nil
+	return 3600*h + 60*m + s, nil
 }
